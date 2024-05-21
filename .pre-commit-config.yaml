@@ -6,11 +6,14 @@ repos:
     hooks:
       - id: trailing-whitespace
         exclude: 3rd_party
-      - id: check-yaml
-        entry: check-yaml --unsafe
       - id: end-of-file-fixer
-      - id: check-merge-conflict
-      - id: check-symlinks
+
+  - repo: https://github.com/sqlfluff/sqlfluff
+    rev: 3.0.6
+    hooks:
+      - id: sqlfluff-fix
+        stages: [pre-commit]
+        args: ["--dialect", "postgres"]
 
   - repo: https://github.com/sqlfluff/sqlfluff
     rev: 3.0.6
