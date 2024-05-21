@@ -39,3 +39,5 @@ I'll leave the rest to you.
 Make sure to install all pre-commit hooks using: `pre-commit install`
 
 In addition to sql formatter, pre-commit hooks enforce conventional commit messages. Make sure to follow the convention when writing commit messages.
+
+Other than that, standard pre-commit hooks are also installed to check for trailing whitespaces, etc.
