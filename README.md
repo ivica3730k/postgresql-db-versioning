@@ -2,6 +2,7 @@
 
 Template repository which could be used to version-control the schema of your PostgreSQL database.
 
+
 ## How to use
 
 Write your sql scripts in the `sql_files` directory. The scripts should be named alphabetically in the order you want them to be executed. For example, `01_create_table.sql`, `02_insert_data.sql`, `03_create_index.sql`, etc.
@@ -32,3 +33,9 @@ I'll leave the rest to you.
 
 ## Note
 - You probably want to remove .gitignore file in the `sql_files` directory to version-control the sql files.
+
+### Pre-commit hooks
+
+Make sure to install all pre-commit hooks using: `pre-commit install`
+
+In addition to sql formatter, pre-commit hooks enforce conventional commit messages. Make sure to follow the convention when writing commit messages.
