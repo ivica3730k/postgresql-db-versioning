@@ -55,7 +55,7 @@ sleep 5
 for FILE in $SQL_FILES $SQL_FILES_A; do
   if [[ $FILE == *.sql ]]; then
     echo "Applying $FILE..."
-    psql -h "$DB_HOST" -p "$DB_PORT" -d "$DB_NAME" -U "$DB_USER" -f "$FILE"
+    psql -v ON_ERROR_STOP=1 -h "$DB_HOST" -p "$DB_PORT" -d "$DB_NAME" -U "$DB_USER" -f "$FILE"
     if [ $? -ne 0 ]; then
       echo "Error: Failed to apply $FILE"
       exit 1
